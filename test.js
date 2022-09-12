@@ -116,7 +116,7 @@ const teams = makeTeam(
     "test10",
     "test11",
   ]),
-  1
+  5
 );
 
 const resultTeam = splitTeam(teams);
