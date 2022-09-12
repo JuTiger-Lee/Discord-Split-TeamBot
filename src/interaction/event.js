@@ -40,20 +40,20 @@ module.exports = async (client, interaction) => {
        * @param {Array} array
        * @returns
        */
-      function shuffle(array) {
+      const shuffle = (array) => {
         const shuffleArr = array;
 
         shuffleArr.sort(() => Math.random() - 0.5);
 
         return shuffleArr;
-      }
+      };
 
       /**
        *
        * @param {Array} teams
        * @param {Number} teamLimit
        */
-      function makeTeam(teams, teamLimit) {
+      const makeTeam = (teams, teamLimit) => {
         const teamGroups = [];
         let groups = [];
         let triggerIdx = 0;
@@ -81,13 +81,13 @@ module.exports = async (client, interaction) => {
         });
 
         return teamGroups;
-      }
+      };
 
       /**
        *
        * @param {Array} teams
        */
-      async function splitTeam(teams) {
+      const splitTeam = async (teams) => {
         const splitTeams = teams;
 
         splitTeams.forEach((item, idx) => {
@@ -116,7 +116,7 @@ module.exports = async (client, interaction) => {
         return splitTeams.sort(
           (firstTeams, secondTeams) => secondTeams.length - firstTeams.length
         );
-      }
+      };
 
       const teams = makeTeam(shuffle(status.members), status.teamLimit);
 
