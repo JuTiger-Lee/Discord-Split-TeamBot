@@ -21,7 +21,7 @@ module.exports = async (client, interaction) => {
 
     const teamChannelSettingInput = new TextInputBuilder()
       .setCustomId("team-channel-setting-input")
-      .setLabel("Please enter a channel ID where you can split your team..")
+      .setLabel("Enter the Team Distribution Voice Channel ID.")
       .setStyle(TextInputStyle.Short);
 
     teammChannelSettingModal.addComponents(
