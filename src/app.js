@@ -31,7 +31,7 @@ function bootstrap() {
       ])
       .catch(console.error);
 
-    console.log("팀나누기 봇이 실행되었습니다.");
+    console.log("SplitTeam Bot Server Start");
   });
 
   interaction(client);
