@@ -122,17 +122,18 @@ module.exports = async (client, interaction) => {
 
       if (groups.length === 1) {
         return await interaction.reply({
-          content: "팀이 1팀 밖에 없어요!",
+          content: "팀이 1팀 밖에 없어요.",
         });
       }
 
       const splitTeams = await splitTeam(groups);
-      let resultSplitTemplate = "";
 
-      splitTeams.forEach(
-        (temas, idx) =>
-          (resultSplitTemplate += `${idx + 1}팀\n${temas.join("\n")} \n\n`)
-      );
+      const resultSplitTemplate = splitTeams.map((teams, idx) => {
+        return {
+          name: `${idx + 1}팀`,
+          value: teams.join("\n"),
+        };
+      });
 
       const { content, embed } = embeds.resultSplitTeam(resultSplitTemplate);
 

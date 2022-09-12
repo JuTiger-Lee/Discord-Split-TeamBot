@@ -9,6 +9,9 @@ const embeds = require("../utils/embeds");
 
 module.exports = async (client, interaction) => {
   if (interaction.commandName === status.events.command.INFORMATION) {
+    const { content, embed } = embeds.botInformation();
+
+    return await interaction.reply({ content, embeds: [embed] });
   }
 
   if (interaction.commandName === status.events.command.TEAM_CAHNNEL_CHOICE) {
@@ -48,13 +51,13 @@ module.exports = async (client, interaction) => {
 
     if (!status.members.length) {
       return await interaction.reply({
-        content: `${status.splitChannelId} 채널에 사람이 없네요 ㅠㅠ`,
+        content: `${status.splitChannelId} 채널에 사람이 없네요.`,
       });
     }
 
     if (status.members.length === 1) {
       return await interaction.reply({
-        content: `${status.splitChannelId} 채널에 1명밖에 없어요!`,
+        content: `${status.splitChannelId} 채널에 1명밖에 없어요.`,
       });
     }
 

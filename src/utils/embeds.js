@@ -7,7 +7,6 @@ const {
 const status = require("../utils/status");
 
 function teamSetting() {
-  const CONTENT = "팀원 리스트에요!";
   const buttonRow = new ActionRowBuilder()
     .addComponents(
       new ButtonBuilder()
@@ -37,7 +36,7 @@ function teamSetting() {
     );
 
   return {
-    content: CONTENT,
+    content: "팀원 리스트에요!",
     row: buttonRow,
     embed: attendMember,
   };
@@ -47,7 +46,7 @@ function resultSplitTeam(resultSplitTemplate) {
   const resultAttendMember = new EmbedBuilder()
     .setColor(0x0099ff)
     .setTitle("팀 분배 결과 리스트")
-    .setDescription(resultSplitTemplate);
+    .addFields(resultSplitTemplate);
 
   return {
     content: "팀 결과에요!",
@@ -55,7 +54,29 @@ function resultSplitTeam(resultSplitTemplate) {
   };
 }
 
+function botInformation() {
+  const botInfo = new EmbedBuilder()
+    .setColor(0x0099ff)
+    .setTitle("SplitTeam Bot Information")
+    .addFields([
+      { name: "Name", value: "SplitTeam" },
+      { name: "Version", value: "1.0.0" },
+      { name: "Developer", value: "Jutiger-Lee" },
+      {
+        name: "Repository",
+        value:
+          "[SplitTeam-Github](https://github.com/team-pixels/Sadari-Game/blob/main/index.js)",
+      },
+    ]);
+
+  return {
+    content: "Bot Information",
+    embed: botInfo,
+  };
+}
+
 module.exports = {
   teamSetting,
   resultSplitTeam,
+  botInformation,
 };
