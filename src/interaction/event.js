@@ -9,7 +9,7 @@ module.exports = async (client, interaction) => {
       );
 
       return await interaction.reply({
-        content: `팀 분배 보이스 채널 ID: ${status.splitChannelId}`,
+        content: `Team voice channel ID: ${status.splitChannelId}`,
       });
     }
   }
@@ -122,7 +122,7 @@ module.exports = async (client, interaction) => {
 
       if (groups.length === 1) {
         return await interaction.reply({
-          content: "팀이 1팀 밖에 없어요.",
+          content: "There is only one team.",
         });
       }
 
@@ -130,7 +130,7 @@ module.exports = async (client, interaction) => {
 
       const resultSplitTemplate = splitTeams.map((teams, idx) => {
         return {
-          name: `${idx + 1}팀`,
+          name: `${idx + 1}Team`,
           value: teams.join("\n"),
         };
       });

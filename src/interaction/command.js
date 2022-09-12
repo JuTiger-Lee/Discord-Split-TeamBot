@@ -17,11 +17,11 @@ module.exports = async (client, interaction) => {
   if (interaction.commandName === status.events.command.TEAM_CAHNNEL_CHOICE) {
     const teammChannelSettingModal = new ModalBuilder()
       .setCustomId("team-channel-setting")
-      .setTitle("팀채널 설정");
+      .setTitle("Team Channel Settings");
 
     const teamChannelSettingInput = new TextInputBuilder()
       .setCustomId("team-channel-setting-input")
-      .setLabel("팀을 분배할 보이스 채널 ID를 입력해주세요.")
+      .setLabel("Please enter a channel ID where you can split your team..")
       .setStyle(TextInputStyle.Short);
 
     teammChannelSettingModal.addComponents(
@@ -37,7 +37,8 @@ module.exports = async (client, interaction) => {
 
     if (!status.splitChannelId) {
       return await interaction.reply({
-        content: '"/팀채널정하기" 명령어를 통해서 팀채널을 먼저 설정해주세요',
+        content:
+          'Please set up the team voice channel first using the command "/split_channel_setting"',
       });
     }
 
@@ -51,13 +52,13 @@ module.exports = async (client, interaction) => {
 
     if (!status.members.length) {
       return await interaction.reply({
-        content: `${status.splitChannelId} 채널에 사람이 없네요.`,
+        content: `There's no one on the ${status.splitChannelId} channel`,
       });
     }
 
     if (status.members.length === 1) {
       return await interaction.reply({
-        content: `${status.splitChannelId} 채널에 1명밖에 없어요.`,
+        content: `There is only one person on the ${status.splitChannelId} channel.`,
       });
     }
 

@@ -23,20 +23,20 @@ function teamSetting() {
     .addComponents(
       new ButtonBuilder()
         .setCustomId(status.events.button.START)
-        .setLabel("시작!")
+        .setLabel("Start")
         .setStyle(ButtonStyle.Primary)
     );
 
   const attendMember = new EmbedBuilder()
     .setColor(0x0099ff)
-    .setTitle("팀원 리스트")
+    .setTitle("Team member list")
     .setDescription(
       `${status.members.join("\n")} \n \n` +
-        `팀당 최대 참여자 수: ${status.teamLimit}`
+        `Maximum number of participants per team: ${status.teamLimit}`
     );
 
   return {
-    content: "팀원 리스트에요!",
+    content: "Team member list",
     row: buttonRow,
     embed: attendMember,
   };
@@ -45,11 +45,11 @@ function teamSetting() {
 function resultSplitTeam(resultSplitTemplate) {
   const resultAttendMember = new EmbedBuilder()
     .setColor(0x0099ff)
-    .setTitle("팀 분배 결과 리스트")
+    .setTitle("Team Distribution Results List")
     .addFields(resultSplitTemplate);
 
   return {
-    content: "팀 결과에요!",
+    content: "Team Distribution Results List",
     embed: resultAttendMember,
   };
 }
