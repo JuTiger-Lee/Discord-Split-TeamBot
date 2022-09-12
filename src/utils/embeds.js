@@ -65,7 +65,7 @@ function botInformation() {
       {
         name: "Repository",
         value:
-          "[SplitTeam-Github](https://github.com/team-pixels/Sadari-Game/blob/main/index.js)",
+          "[SplitTeam-Github](https://github.com/JuTiger-Lee/Discord-Split-TeamBot)",
       },
     ]);
 
