@@ -130,7 +130,7 @@ module.exports = async (client, interaction) => {
 
       const resultSplitTemplate = splitTeams.map((teams, idx) => {
         return {
-          name: `${idx + 1}Team`,
+          name: `${idx + 1} Team`,
           value: teams.join("\n"),
         };
       });
