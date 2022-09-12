@@ -118,15 +118,15 @@ module.exports = async (client, interaction) => {
         );
       };
 
-      const teams = makeTeam(shuffle(status.members), status.teamLimit);
+      const groups = makeTeam(shuffle(status.members), status.teamLimit);
 
-      if (teams.length === 1) {
+      if (groups.length === 1) {
         return await interaction.reply({
-          content: "팀을 나누기에는 팀이 1팀 밖에 없어요!",
+          content: "팀이 1팀 밖에 없어요!",
         });
       }
 
-      const splitTeams = await splitTeam(teams);
+      const splitTeams = await splitTeam(groups);
       let resultSplitTemplate = "";
 
       splitTeams.forEach(
