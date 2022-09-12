@@ -17,15 +17,16 @@ function bootstrap() {
       .set([
         {
           name: status.events.command.TEAM_SPLIT,
-          description: "팀을 나눕니다.",
+          description: "Divide the team.",
         },
         {
           name: status.events.command.TEAM_CAHNNEL_CHOICE,
-          description: "팀을 나누기 위해서 팀 분배 보이스 채널을 설정해야되요!",
+          description:
+            "To divide the team, you need to set up a voice channel.",
         },
         {
           name: status.events.command.INFORMATION,
-          description: "봇 정보를 확인합니다.",
+          description: "Check bot information.",
         },
       ])
       .catch(console.error);

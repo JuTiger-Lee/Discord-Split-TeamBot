@@ -10,11 +10,11 @@ The method of using an external program to divide a team and then sharing it wit
 
 ![channelId](./public/image/channelSetting.PNG)
 
-- Enter the "/팀채널설정하기" command and paste the copied channel ID
+- Enter the "/split_channel_setting" command and paste the copied channel ID
 
 ![memberList](./public/image/memberList.PNG)
 
-- "/팀나누기" command
+- "/split_team" command
 - Set the maximum number of people per team with the + and - buttons
 - After setting, click the start button
 

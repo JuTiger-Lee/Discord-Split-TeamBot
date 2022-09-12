@@ -4,9 +4,9 @@ module.exports = {
   splitChannelId: null,
   events: {
     command: {
-      TEAM_SPLIT: "팀나누기",
-      TEAM_CAHNNEL_CHOICE: "팀채널정하기",
-      INFORMATION: "정보",
+      TEAM_SPLIT: "split_team",
+      TEAM_CAHNNEL_CHOICE: "split_channel_setting",
+      INFORMATION: "information",
     },
     button: {
       DELETE: "delete",
