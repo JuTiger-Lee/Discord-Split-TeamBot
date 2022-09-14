@@ -43,9 +43,7 @@ module.exports = async (client, interaction) => {
       const shuffle = (array) => {
         const shuffleArr = array;
 
-        shuffleArr.sort(() => Math.random() - 0.5);
-
-        return shuffleArr;
+        return shuffleArr.sort(() => Math.random() - 0.5);
       };
 
       /**
@@ -56,9 +54,8 @@ module.exports = async (client, interaction) => {
       const makeTeam = (teams, teamLimit) => {
         const teamGroups = [];
         let groups = [];
-        let triggerIdx = 0;
 
-        teams.forEach((team) => {
+        teams.forEach((team, idx) => {
           const checkGroupsLimit = () => {
             if (groups.length === teamLimit) {
               teamGroups.push(groups);
@@ -69,9 +66,7 @@ module.exports = async (client, interaction) => {
           };
 
           const checkRemainderGroups = () => {
-            triggerIdx += 1;
-
-            if (teams.length === triggerIdx) {
+            if (teams.length === idx + 1) {
               if (groups.length) teamGroups.push(groups);
             }
           };

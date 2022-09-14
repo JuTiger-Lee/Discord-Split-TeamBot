@@ -23,9 +23,7 @@
 function shuffle(array) {
   const shuffleArr = array;
 
-  shuffleArr.sort(() => Math.random() - 0.5);
-
-  return shuffleArr;
+  return shuffleArr.sort(() => Math.random() - 0.5);
 }
 
 /**
@@ -36,9 +34,8 @@ function shuffle(array) {
 function makeTeam(teams, teamLimit) {
   const teamGroups = [];
   let groups = [];
-  let triggerIdx = 0;
 
-  teams.forEach((team) => {
+  teams.forEach((team, idx) => {
     const checkGroupsLimit = () => {
       if (groups.length === teamLimit) {
         teamGroups.push(groups);
@@ -49,9 +46,7 @@ function makeTeam(teams, teamLimit) {
     };
 
     const checkRemainderGroups = () => {
-      triggerIdx += 1;
-
-      if (teams.length === triggerIdx) {
+      if (teams.length === idx + 1) {
         if (groups.length) teamGroups.push(groups);
       }
     };
@@ -115,6 +110,14 @@ const teams = makeTeam(
     "test9",
     "test10",
     "test11",
+    // "test12",
+    // "test13",
+    // "test14",
+    // "test15",
+    // "test16",
+    // "test17",
+    // "test18",
+    // "test19",
   ]),
   5
 );
