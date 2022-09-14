@@ -13,5 +13,8 @@ module.exports = {
       ADD: "add",
       START: "start",
     },
+    modal: {
+      TEAM_CHANNEL_SETTING: "team-channel-setting",
+    },
   },
 };
