@@ -33,9 +33,6 @@ module.exports = async (client, interaction) => {
   }
 
   if (interaction.commandName === status.events.command.TEAM_SPLIT) {
-    const serverId = interaction.guild.id;
-    const channel = client.guilds.resolve(serverId);
-
     if (!status.splitChannelId) {
       return await interaction.reply({
         content:
@@ -43,6 +40,8 @@ module.exports = async (client, interaction) => {
       });
     }
 
+    const serverId = interaction.guild.id;
+    const channel = client.guilds.resolve(serverId);
     const members = await channel.members.fetch();
 
     status.members = members
