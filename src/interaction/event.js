@@ -51,7 +51,7 @@ module.exports = async (client, interaction) => {
        * @param {Array} teams
        * @param {Number} teamLimit
        */
-      const makeTeam = (teams, teamLimit) => {
+      const makeGroup = (teams, teamLimit) => {
         const teamGroups = [];
         let groups = [];
 
@@ -113,7 +113,7 @@ module.exports = async (client, interaction) => {
         );
       };
 
-      const groups = makeTeam(shuffle(status.members), status.teamLimit);
+      const groups = makeGroup(shuffle(status.members), status.teamLimit);
 
       if (groups.length === 1) {
         return await interaction.reply({
