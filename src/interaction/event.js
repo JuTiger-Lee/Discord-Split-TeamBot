@@ -3,7 +3,7 @@ const embeds = require("../utils/embeds");
 
 module.exports = async (client, interaction) => {
   if (interaction.isModalSubmit()) {
-    if (interaction.customId === "team-channel-setting") {
+    if (interaction.customId === status.events.modal.TEAM_CHANNEL_SETTING) {
       status.splitChannelId = interaction.fields.getTextInputValue(
         "team-channel-setting-input"
       );
@@ -20,7 +20,7 @@ module.exports = async (client, interaction) => {
 
       const { embed, row, content } = embeds.teamSetting();
 
-      await interaction.update({
+      return await interaction.update({
         content,
         components: [row],
         embeds: [embed],
